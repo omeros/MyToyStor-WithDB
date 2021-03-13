@@ -26,7 +26,7 @@
         </div>
         
        <!-- <a  href="/toy#/toy" @click="saveToy()"> save </a> -->
-   <button class="save-todo-button" href="/"  @click.prevent="saveToy()">save</button>
+   <button class="save-toy-button" href="/"  @click.prevent="saveToy()">save</button>
     <router-link to="/toy">Go Back</router-link> 
 
           </div>

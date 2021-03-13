@@ -109,8 +109,9 @@ footer {
     transition: 0.3s;
 }
 
-.save-todo-button{
-    width: 70px;
+.save-toy-button{
+    font-size: large;
+    width: 130px;
 }
 .cell{
     size: 30px;
@@ -118,11 +119,12 @@ footer {
     
 }
 .edit-cell{
-    width: 150px;
+    font-size: large;
+    width: 230px;
     background-color: rgb(185, 241, 176);
 }
 .edit-cell-title{
-    width: 150px;
+    width: 230px;
     background-color: rgb(240, 220, 166);
 }
 th{
