@@ -1,0 +1,242 @@
+body {
+    max-width: 1500px;
+    height: 1000px;
+    margin:auto;
+    padding: 10px;
+}
+.todo-preview{
+    text-align: center;
+}
+.font-color {
+    width: 140px;
+}
+.main-name{
+    text-align: center;
+    font-size: x-large;
+}
+.header-links{
+padding: 50px;
+margin: 50px;
+}
+
+.baba-g{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+}
+ a {
+     color: rgb(65, 44, 5);
+ }
+ .what-todo{
+    text-align: center;
+ }
+ .add-todo{
+display: flex;
+justify-content: center;
+align-items: center;
+ }
+.main-title {
+ 
+    text-align: center;
+    color:rgba(36, 7, 7, 0.685);
+    font-family: Arial, Helvetica, sans-serif;
+}
+.user-todo{
+    padding: 100px;
+}
+
+header {
+    background-color: rgb(131, 201, 91);
+    padding: 0px;
+    height: 80px;
+}
+header h5 span{
+    background-color: rgb(134, 161, 127);
+    padding: 0px;
+    border-radius: 4px;
+}
+header h5 a{
+    font-size: 0.8em;
+    color: yellowgreen;
+}
+
+.todo-section{
+    position: relative; 
+}
+.label-todo{
+    position: absolute;
+    left: 200px;
+}
+h2{
+    text-align: center;
+}
+.filter-todo{
+    position: absolute;
+    left: 300px;
+    margin: 0;
+    text-align: center;
+}
+.details-todo{
+    height: 400px;
+}
+footer {
+    background-color: rgb(131, 201, 91);
+    padding: 10px;
+}
+.details-link:hover {
+    background-color: rgb(202, 145, 128);
+    border-radius: 10px;
+}
+.edit-link:hover {
+    background-color: rgb(185, 175, 114);
+    border-radius: 10px;
+}
+.details-link{
+    border: 0;
+    border-radius: 10px;
+    background-color: rgb(219, 208, 233);    
+    color: rgb(31, 83, 187);
+    cursor: pointer;
+    transition: 0.3s;
+}
+.edit-link{
+    border: 0;
+    border-radius: 10px;
+    background-color: rgb(151, 214, 175);    
+    color: rgb(31, 83, 187);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.save-todo-button{
+    width: 70px;
+}
+.cell{
+    size: 30px;
+    background-color: rgb(210, 216, 209);
+    
+}
+.edit-cell{
+    width: 150px;
+    background-color: rgb(185, 241, 176);
+}
+.edit-cell-title{
+    width: 150px;
+    background-color: rgb(240, 220, 166);
+}
+th{
+    border: 2px solid black;
+    width: 140px;
+    height: 20px;
+   
+
+}
+td {
+border: 3px solid black;
+width: 140px;
+height: 50px;
+
+
+
+}
+.home{
+    min-height: 400px;
+}
+.todo-app{
+    min-height: 400px;
+}
+h1{
+ text-align: center;
+}
+h3{
+    text-align: center; 
+}
+
+button {
+    border: 0;
+    border-radius: 10px;
+    background-color: rgb(139, 159, 189);    
+    color: rgb(23, 24, 26);
+    cursor: pointer;
+    transition: 0.3s;
+}
+button:hover {
+    background-color: rgb(180, 216, 97);
+    border-radius: 10px;
+}
+.round{
+    border-radius: 10px;
+}
+.router-link-exact-active {
+    color: rgb(53, 68, 153);
+}
+
+.alert {
+    color:rgb(48, 30, 128);
+    padding: 5px;
+    font-size: 1.4em;
+    position: absolute;
+    top:0;
+    right:0;
+    background-color: grey;
+}
+
+.alert-success {
+    background-color: rgb(15, 122, 15);
+}
+.alert-danger {
+    background-color: rgb(122, 11, 11);
+}
+
+
+.cart {
+    background-color: brown;
+    color: whitesmoke;
+    padding: 5px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.user-info {
+    background-color: brown;
+    color: whitesmoke;
+    padding: 10px;
+    float: right;
+}
+.footer{
+    height: 80px;
+}
+
+ul li:hover {
+    background: #ddd;
+}
+  ul li.checked {
+    background: #888;
+    color: #fff;
+    text-decoration: line-through;
+}
+
+ul li.checked::before {
+    content: '';
+    position: absolute;
+    border-color: #fff;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    top: 10px;
+    left: 16px;
+    transform: rotate(45deg);
+    height: 15px;
+    width: 7px;
+  }
+
+ ul{
+    /* list-style-type: none; */
+    display: inline-block;
+}
+li{
+    cursor: pointer;
+    display: list-item;
+    /* list-style-type: none; */
+} 
