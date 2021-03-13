@@ -21,14 +21,6 @@ async function query(filterBy = {}) {
         // var toys = await collection.find(criteria).toArray()
         var toys = await collection.find({}).toArray()
         console.log(' after filter the collections returned from the DB',toys)
-        // toys = toys.map(toy => {
-        //     delete toy.password
-        //     toy.isHappy = true
-        //     toy.createdAt = ObjectId(toy._id).getTimestamp()
-        //     // Returning fake fresh data
-        //     // user.createdAt = Date.now() - (1000 * 60 * 60 * 24 * 3) // 3 days ago
-        //     return toy
-        // })
         return toys
     } catch (err) {
         logger.error('cannot find toys', err)

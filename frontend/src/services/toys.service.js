@@ -1,10 +1,11 @@
-.// NOTE: this is a synchronous service on purpose
+// NOTE: this is a synchronous service on purpose
 // meant to simplify first intro to Vuex
 
 
 import {utilService} from '@/services/util.service.js'
 import axios from 'axios'
 import {storageService} from '@/services/async-storage.service.js'
+import {httpService} from './http.service'
 
  const TOY_URL = 'http://localhost:3030/api/toy/'
 
@@ -27,12 +28,18 @@ export const toysService = {
 
 
 // TODO: support paging and filtering and sorting
-function query() {
-    return axios.get(TOY_URL ).then(res => {
-        console.log('query in  front stoys.service', res.data)
-      return     res.data
-    })
+// function query() {
+//     return axios.get(TOY_URL ).then(res => {
+//         console.log('query in  front stoys.service', res.data)
+//       return     res.data
+//     })
 
+//     // return storageService.query(KEY)
+// }
+function query(filterBy) {
+ 
+    var queryStr = (!filterBy) ? '' : `?name=${filterBy.name}&sort=anaAref`
+    return  httpService.get(`toy${queryStr}`)
     // return storageService.query(KEY)
 }
 
