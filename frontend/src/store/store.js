@@ -109,15 +109,12 @@ export default new Vuex.Store({
 
         },
         saveToy(context,payload){
-            //TODO : support EDIT
             console.log(' theToyToSave in action in store ',payload.theToyToSave)
             const type =(payload.theToyToSave._id)? 'updateTodo': 'addTodo';
-            //console.log('add from stor from action',payload.product)
             toysService.save(payload.theToyToSave)
             .then(savedToy=>{
-                console.log('saved toy  in after save service,type  :',savedToy,type)
-           //  context.commit({type : 'savetoys' , todo : savedTodo})
-              context.commit({type , toy : savedToy})
+                console.log('saved toy  in after save service,type in store  :',savedToy,type)
+                context.commit({type , toy : savedToy})
             })
         },
         removeToy(context,payload){

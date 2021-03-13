@@ -91,6 +91,7 @@ async function add(toy) {
             createdAt :  toy.createdAt,
             inStock :  toy.inStock
         }
+        delete toyToAdd._id 
         const collection = await dbService.getCollection('toy')
         await collection.insertOne(toyToAdd)
         return toyToAdd

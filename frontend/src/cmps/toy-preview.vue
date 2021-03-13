@@ -26,7 +26,7 @@ export default {
           }
       },
       mounted (){
-         console.log('toy in preview',this.toy)
+        // console.log('toy in preview',this.toy)
       },
           computed: {
       myToy(){
@@ -35,7 +35,7 @@ export default {
      },
      methods: {
   removeToy(id){
-    console.log('toy id delete from toy preview,' ,id)
+    //console.log('toy id delete from toy preview,' ,id)
     this.$emit("remotoy", id);
 },
    myFilter() {

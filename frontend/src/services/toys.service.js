@@ -36,28 +36,40 @@ export const toysService = {
 
 //     // return storageService.query(KEY)
 // }
+
+// get all toys  as list 
 function query(filterBy) {
- 
-    var queryStr = (!filterBy) ? '' : `?name=${filterBy.name}&sort=anaAref`
+     var queryStr = (!filterBy) ? '' : `?name=${filterBy.name}&sort=anaAref`
     return  httpService.get(`toy${queryStr}`)
     // return storageService.query(KEY)
 }
 
-function getById(id) {
-    return axios.get(TOY_URL + id).then(res => {
-        return     res.data
-      })
+
+// get a single toy by id 
+function getById(toyId) {
+    return  httpService.get(`toy/${toyId}`,toy)
+    // return axios.get(TOY_URL + id).then(res => {
+    //     return     res.data
+    //   })
 //     return storageService.get(KEY,id)
 // }
 }
 
+
+// add and update toy
 function save(toy) {
     if (toy._id) {
-        return axios.put(TOY_URL + toy._id, toy)
-        .then(res => res.data)
+        console.log('error at toy.sevice')
+        return  httpService.put(`toy/${toy._id}`,toy)             // update a toy
+         
+        // return axios.put(TOY_URL + toy._id, toy)
+        // .then(res => res.data)
     } else {
-        return axios.post(TOY_URL, toy)
-        .then(res => res.data)
+        console.log('add new toy in toy.service', toy)
+        return httpService.post(`toy`,toy)                     // addad a  new toy
+    
+        // return axios.post(TOY_URL, toy)
+        // .then(res => res.data)
     }
     
     // const savedTodo = (toy._id) ? storageService.put(KEY,toy) : storageService.post(KEY,toy)
@@ -65,11 +77,13 @@ function save(toy) {
     
 }
 
-function remove(id) {
-    return axios.delete(TOY_URL + id)
-    .then(res => res.data)
-//    return  storageService.remove(KEY,id)
+function remove(toyId) {
+return httpService.delete(`toy/${toyId}`)
 }
+//     return axios.delete(TOY_URL + id)
+//     .then(res => res.data)
+// //    return  storageService.remove(KEY,id)
+// }
 /****************************************************************************************************** */
 
 

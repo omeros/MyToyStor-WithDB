@@ -82,7 +82,7 @@ export default {
       this.productToEdit = toysService.getEmptyToy();
     },
     removeToy(toyId) {
-      console.log("Removing...", toyId);
+      console.log("Removing from toyApp...", toyId);
       this.$store.dispatch({ type: "removeToy", toyId });
       this.productToEdit = toysService.getEmptyToy();
     },
