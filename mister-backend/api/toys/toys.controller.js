@@ -30,10 +30,10 @@ async function getToy(req, res) {
     }
 }
 
-
+///************************** ok ********************** */
 async function addToy(req, res) {
     try {
-        console.og(' add new toy', req.body)
+        console.log(' add new toy')//, req.body)
 
 
         var toy = req.body
@@ -41,7 +41,7 @@ async function addToy(req, res) {
 
         toy = await ToyService.add(toy)
 
-        res.send(review)
+        res.send(toy)
 
     } catch (err) {
         logger.error('Failed to add toy', err)
@@ -60,6 +60,7 @@ async function deleteToy(req, res) {
 
 async function updateToy(req, res) {
     try {
+        console.log(' update a toy  in controller', req.body)
         const toy = req.body
         const savedToy = await ToyService.update(toy)
         res.send(savedToy)

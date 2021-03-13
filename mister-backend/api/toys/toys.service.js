@@ -35,7 +35,7 @@ async function query(filterBy = {}) {
         throw err
     }
 }
-
+/********************** ok ***************************/
 async function getById(toyId) {
     try {
         console.log(' the id : ', toyId)
@@ -56,22 +56,23 @@ async function getById(toyId) {
     }
 }
 
-
+/*********************** ok ****************** */
 async function remove(toyId) {
     try {
         const collection = await dbService.getCollection('toy')
         await collection.deleteOne({ '_id': ObjectId(toyId) })
+        console.log(' toy removed :',toyId)
     } catch (err) {
         logger.error(`cannot remove toy ${toyId}`, err)
         throw err
     }
 }
-
+/********************************ok **********************************/
 async function update(toy) {
     try {
         // peek only updatable fields!
         const toyToSave = {
-            _id  : toy._id,
+            _id  : ObjectId(toy._id),
             name : toy.name,
             price : toy.price,
             type : toy.type,
@@ -82,11 +83,11 @@ async function update(toy) {
         await collection.updateOne({ '_id': toyToSave._id }, { $set: toyToSave })
         return toyToSave;
     } catch (err) {
-        logger.error(`cannot update user ${user._id}`, err)
+        logger.error(`cannot update toy ${toy._id}`, err)
         throw err
     }
 }
-
+/********************************* ok ****************************** */
 async function add(toy) {
     try {
         // peek only updatable fields!
