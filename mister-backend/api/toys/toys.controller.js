@@ -1,42 +1,51 @@
 const ToyService = require('./toys.service')
 const logger = require('../../services/logger.service')
 
-async function getToy(req, res) {
-    try {
-        const user = await ToyService.getById(req.params.id)
-        res.send(user)
-    } catch (err) {
-        logger.error('Failed to get user', err)
-        res.status(500).send({ err: 'Failed to get user' })
-    }
-}
+
+
+
+
 
 async function getToys(req, res) {
     try {
         const filterBy = {
-            txt: req.query?.txt || '',
-            minBalance: +req.query?.minBalance || 0
+            txt: req.query?.txt
         }
-        const users = await ToyService.query(filterBy)
-        res.send(users)
+        const toys = await ToyService.query(filterBy)
+        console.log('toys return from the server befor sendint to front',toys)
+        res.send(toys)
     } catch (err) {
-        logger.error('Failed to get users', err)
-        res.status(500).send({ err: 'Failed to get users' })
+        logger.error('Failed to get toys', err)
+        res.status(500).send({ err: 'Failed to get toys' })
     }
 }
 
+async function getToy(req, res) {
+    try {
+        const toy = await ToyService.getById(req.params.id)
+        res.send(toy)
+    } catch (err) {
+        logger.error('Failed to get toy', err)
+        res.status(500).send({ err: 'Failed to get toy' })
+    }
+}
+
+
 async function addToy(req, res) {
     try {
-        var review = req.body
-        review.byUserId = req.session.user._id
-        review = await reviewService.add(review)
-        review.byUser = req.session.user
-        review.aboutUser = await userService.getById(review.aboutUserId)
+        console.og(' add new toy', req.body)
+
+
+        var toy = req.body
+
+
+        toy = await ToyService.add(toy)
+
         res.send(review)
 
     } catch (err) {
-        logger.error('Failed to add review', err)
-        res.status(500).send({ err: 'Failed to add review' })
+        logger.error('Failed to add toy', err)
+        res.status(500).send({ err: 'Failed to add toy' })
     }
 }
 async function deleteToy(req, res) {
@@ -44,19 +53,19 @@ async function deleteToy(req, res) {
         await ToyService.remove(req.params.id)
         res.send({ msg: 'Deleted successfully' })
     } catch (err) {
-        logger.error('Failed to delete user', err)
-        res.status(500).send({ err: 'Failed to delete user' })
+        logger.error('Failed to delete toy', err)
+        res.status(500).send({ err: 'Failed to delete toy' })
     }
 }
 
 async function updateToy(req, res) {
     try {
-        const user = req.body
-        const savedUser = await ToyService.update(user)
-        res.send(savedUser)
+        const toy = req.body
+        const savedToy = await ToyService.update(toy)
+        res.send(savedToy)
     } catch (err) {
-        logger.error('Failed to update user', err)
-        res.status(500).send({ err: 'Failed to update user' })
+        logger.error('Failed to update toy', err)
+        res.status(500).send({ err: 'Failed to update toy' })
     }
 }
 
