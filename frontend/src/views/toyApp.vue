@@ -26,9 +26,12 @@
       <input class="edit-cell" type="text" v-model="productToEdit.price" />
       <input class="edit-cell" type="text" v-model="productToEdit.type" />
     </div>
-    <form class="add-todo" @submit.prevent="addToy">
+    <div class="add-toy-header"> 
+       <button class="add-toy" href="/"  @click.prevent="addToy()">add</button>
+    </div>
+    <!-- <form class="add-toy" @submit.prevent="addToy">
       <button>Add</button>
-    </form>
+    </form> -->
   </div>
 </template>
 

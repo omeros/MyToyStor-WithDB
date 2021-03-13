@@ -20,6 +20,7 @@ margin: 50px;
 }
 
 .baba-g{
+    font-size: large;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -31,10 +32,14 @@ margin: 50px;
  .what-todo{
     text-align: center;
  }
- .add-todo{
+ .add-toy-header{
 display: flex;
 justify-content: center;
 align-items: center;
+ }
+ .add-toy{
+font-size:large;
+width: 100px;
  }
 .main-title {
  
